@@ -1,10 +1,5 @@
 class TracksController < ApplicationController
 
-  def home
-		t = Track.new 
-		@filtered_tracks = t.get_tracks_from_soundcloud
-	end
-
   def test
   	@last_tracks = TrackData.last(10)
   	@last_track = TrackData.last

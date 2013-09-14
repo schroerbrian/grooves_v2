@@ -2,8 +2,6 @@ $(window).bind('beforeunload',function(){
     return 'about to refresh page';
 });
 
-
-
   <% @old_tracks.each_with_index do |old_track, i| %>  
  		L.marker(<%= good_track[:coordinates] %>)
  			.addTo(map)

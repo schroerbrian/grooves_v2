@@ -1,25 +1,20 @@
-<head>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="http://w.soundcloud.com/player/api.js"></script>
-  <script>
-   $(document).ready(function() {
-     var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-     widget.bind(SC.Widget.Events.READY, function() {
-       console.log('Ready...');
-     });
-     $('button').click(function() {
-       widget.toggle();
-     });
-   });
-  </script>
-</head>
-  <iframe id="soundcloud_widget"
-      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=true&sharing=true&auto_play=true"
-      width="420"
-      height="120"
-      frameborder="no"></iframe>
-  <button>Play / Pause</button>
-<%#= @old_tracks %>
+<div id="map">
+</div>
+  
+<script>  
+  var map = L.map('map', { center: [22, 122], maxBounds: [[90, -180], [-90, 180]] }).setView([10, 0.1], 1);
 
- <%# Try to load new tracks on refresh %>
+  L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+     maxZoom: 18,
+     minZoom: 1   
+  }).addTo(map);
+</script>
+
+<div class="footer">
+  # %iframe#soundcloud_widget{:frameborder => "no", :height => "120", :src => "http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=true&sharing=true&auto_play=true", :width => "420"}
+  # %button Play / Pause
+  hello world 
+</div>
+
 
