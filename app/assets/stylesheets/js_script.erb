@@ -1,0 +1,20 @@
+$(window).bind('beforeunload',function(){
+    return 'about to refresh page';
+});
+
+
+
+  <% @old_tracks.each_with_index do |old_track, i| %>  
+ 		L.marker(<%= good_track[:coordinates] %>)
+ 			.addTo(map)
+ 			.bindPopup("<div class='top'><img src='<%= good_track[:user].avatar_url %>' width='80' ><p class='name'><%= good_track[:user].username.titleize %></p></div><a href='<%= good_track[:track].permalink_url %>' target='_blank'><em><%= good_track[:track].title %></em></a><br /><%= good_track[:user].city.titleize %>, <%= good_track[:user].country.titleize %>")
+ 			.on("click", function(event) {
+ 				var trackId = "<%= good_track[:track].id %>";
+ 				onMarkerClick(trackId);
+ 			})
+ 			.on("click", function() { map.setView(<%= good_track[:coordinates] %>, 3);
+ 			})
+ 		<% if i.zero? %>
+ 			.openPopup();
+ 		<% end %>
+  <% end %>    

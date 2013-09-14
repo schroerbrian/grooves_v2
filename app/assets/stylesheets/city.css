@@ -1,0 +1,165 @@
+html, body, #map {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: white;
+	margin: 0;
+  font-family: 'helvetica', sans serif;
+}
+
+header {
+	width: 295px;
+	box-shadow: inset 3px 9x #000000;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	border: 2px solid;
+	border-top: 0;
+	margin-left: 60px;
+	background: #fff;
+	padding-top: 5px;
+}
+
+header .site_name h1 {
+	font-family: "Helvetica", sans-serif;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin: 15px 20px 10px 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 80%;
+	border-bottom: 2px solid;
+	border-top: 5px solid;
+}
+
+.site_name h3 {
+	margin: 10px 20px 20px 10px;
+	padding-left: 10px;
+	font-size: 18px;
+	width: 75%;
+}
+
+.new-tracks {
+	position: absolute;
+	margin: 0;
+	bottom: 170px;
+	right: 75px;
+	background: #fff;
+	padding-top: 5px;
+	width: 125px;
+	z-index: 999;
+}
+
+ .next-track {
+	font-family: "Helvetica", sans-serif;
+	font-size: 12px;
+	width: 75%;
+	border-top: 3px solid;
+	margin: 10px;
+	padding-left: 5px;
+}
+
+#map .new-tracks #rando {
+	text-decoration: none;
+	font-family: "Helvetica", sans-serif;
+	font-size: 12px;
+	text-color: #000;
+}
+
+.flashback {
+	font-size: 12px;
+	font-family: "helvetica", sans-serif;
+	margin: 0px 10px 0px 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	width: 75%;
+	border-top: 2px solid grey;
+}
+
+.random {
+	font-size: 12px;
+	font-family: "helvetica", sans-serif;
+	margin: 0px 10px 10px 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	width: 75%;
+	border-top: 2px solid grey;
+}
+
+.leaflet-popup-content a {
+	text-decoration: none;
+	target-name: new;
+	target-new: tab;
+	font-family: "Helvetica", sans-serif;
+	mar
+/*	border-top: 2px solid #000;*/
+}
+
+.leaflet-popup-content a:link {
+	color: #000;
+}
+
+.leaflet-popup-content a:hover {
+	color: #4e4e4e;
+}
+
+.leaflet-popup-content a:visited {
+	color: #000;
+}
+
+.leaflet-popup-content .name {
+	float: right;
+	margin-top: 0;
+	margin-left: 1px;
+}
+
+.top {
+	border-bottom: 2px solid grey;
+}
+
+.footer {
+	height: 2%;
+	background: #2c3e50;
+  padding: 35px 2%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 96%;
+}
+
+.track:not(:first-child) {
+	display: none;
+}
+
+.track div ul {
+	margin-left: 0px;
+	padding: 0px;
+	font-family: "Helvetica", sans-serif;
+}
+
+.track li {
+	display: inline;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-size: 12px;
+	font-family: "helvetica", sans-serif;
+}
+
+.track li:first-child{
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-right: 0px;
+} 
+
+
+/*.track .skip {
+	position: relative;
+	left: 900px;
+	bottom: 10px;
+	top: 10px;
+}*/

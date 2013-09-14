@@ -1,0 +1,14 @@
+<%# the player %>
+<div class="track" id="track-<%= track[:track].id %>"> 
+	<a href="http://soundcloud.com/<%= "#{track[:user].permalink}/#{track[:track].permalink}" %>" class="sc-player"></a>
+	
+	<%# track info %>		
+	<div class="track_info">	 
+		<ul>		
+			<li><%= track[:track].user.username.titleize %></li> <strong>||</strong>
+			<li><em><%= track[:track].title.titleize %></em></li> <strong>||</strong>
+			<li><%= "#{track[:user].city.titleize}, #{track[:user].country.titleize}" %></li>
+		</ul>
+	</div>
+
+</div> 

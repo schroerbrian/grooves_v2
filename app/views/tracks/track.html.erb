@@ -1,0 +1,25 @@
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="http://w.soundcloud.com/player/api.js"></script>
+  <script>
+   $(document).ready(function() {
+     var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+     widget.bind(SC.Widget.Events.READY, function() {
+       console.log('Ready...');
+     });
+     $('button').click(function() {
+       widget.toggle();
+     });
+   });
+  </script>
+</head>
+  <iframe id="soundcloud_widget"
+      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=true&sharing=true&auto_play=true"
+      width="420"
+      height="120"
+      frameborder="no"></iframe>
+  <button>Play / Pause</button>
+<%#= @old_tracks %>
+
+ <%# Try to load new tracks on refresh %>
+
