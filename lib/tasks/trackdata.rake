@@ -5,7 +5,7 @@ namespace :trackdata do
 
 	task :import => :environment do
 
-		puts "You are pulling tracks from Soundcloud"
+		puts "You are pulling tracks from Soundcloud..."
 		client = Soundcloud.new(:client_id => "e9e8fbf8ac2f57eb0f54519af9c2f22e")
 		tracks = client.get('/tracks', :limit => 200)
 		
@@ -23,7 +23,10 @@ namespace :trackdata do
 			downloaded_tracks
 		end 
 
-		puts downloaded_tracks
+		downloaded_tracks.each do |d|
+			puts d[:user].username 
+			puts d[:track].title
+		end 
 
 		downloaded_tracks.each do |downloaded_track|
 			if downloaded_track[:coordinates].first.nil?
