@@ -1,12 +1,9 @@
 namespace :trackdata do 
 	desc "import new tracks to the database"
 
-	task :current_environment do 
-		puts "You are pulling tracks from Soundcloud"
-	end 
-
 	task :import => :environment do
 
+		puts "You are pulling tracks from Soundcloud"
 		client = Soundcloud.new(:client_id => "e9e8fbf8ac2f57eb0f54519af9c2f22e")
 		tracks = client.get('/tracks', :limit => 200)
 		
