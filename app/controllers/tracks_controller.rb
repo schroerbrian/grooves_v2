@@ -13,6 +13,7 @@ class TracksController < ApplicationController
 
   #test controllers are below
   def track
+    @database_tracks = TrackData.last(5)
 	end
 
 end
