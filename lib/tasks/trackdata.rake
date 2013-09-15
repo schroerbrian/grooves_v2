@@ -1,3 +1,5 @@
+require 'pp'
+
 namespace :trackdata do 
 	desc "import new tracks to the database"
 
