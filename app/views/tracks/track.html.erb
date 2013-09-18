@@ -1,4 +1,5 @@
 <div id="map">
+  
   <script>  
     var map = L.map('map', { center: [22, 122], maxBounds: [[90, -180], [-90, 180]] }).setView([10, 0.1], 1);
 
@@ -20,7 +21,7 @@
          var coords = [];
          coords.push(most_recent_track.lat)
          coords.push(most_recent_track.lng)
-
+         console.log(most_recent_track.track_id)
          L.marker(coords)
            .addTo(map)
            .bindPopup("<div class='top'>" + 
@@ -39,37 +40,34 @@
            })
            .on("click", function() { map.setView(coords, 3);
           })
+          var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+          widget.bind(SC.Widget.Events.READY, function() {
+            console.log('Ready...');
+          });
+
         });
       }
     });
 
+    $(document).ready(function() {
+        $('button').click(function() {
+          widget.toggle();
+        });
+    });
+      
+    function onMarkerClick(trackId) {
+      $(".track").hide();
+      $("#track-" + trackId).show().find(".sc-trackslist a").click();
+    };
   </script>
+
 </div> 
 
-<script> 
-  $(document).ready(function() {
-      var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-      widget.bind(SC.Widget.Events.READY, function() {
-        console.log('Ready...');
-      });
-      $('button').click(function() {
-        widget.toggle();
-      });
-      $
-  });
-    
-  function onMarkerClick(trackId) {
-    $(".track").hide();
-    $("#track-" + trackId).show().find(".sc-trackslist a").click();
-  };
 
-  // click on marker: popup track info and play track
- 
-</script> 
 
 <div class="footer">
   <iframe id="soundcloud_widget"
-      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=false&sharing=false&auto_play=false"
+      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=false&sharing=false&auto_play=true"
       width="420"
       height="120"
       frameborder="no">
