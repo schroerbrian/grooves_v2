@@ -24,20 +24,4 @@ class Track
 		@filtered_tracks
 	end
 
-	#this will be a rake task
-	# def insert_tracks_into_track_data_table
- #  	@filtered_tracks.each do |filtered_track|
- #  		if filtered_track[:coordinates].first.nil?
- #  			filtered_tracks.delete(filtered_track)
- #  		else 
- #  			TrackData.create(:track_id => filtered_track[:track].id, 
-	#   		:track_name => filtered_track[:track].title, :track_permalink => filtered_track[:track].permalink,
-	#    		:user_id => filtered_track[:user].id, :username => filtered_track[:user].username, 
-	#    		:user_city => filtered_track[:user].city, :user_country => filtered_track[:user].country, 
-	#    		:user_permalink => filtered_track[:user].permalink, :user_avatar_url => filtered_track[:user].avatar_url,
-	#    		:lat => filtered_track[:coordinates].first, :lng => filtered_track[:coordinates].last)
- #  		end
- #  	end
-	# end
-
 end
