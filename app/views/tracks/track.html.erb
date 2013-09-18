@@ -8,6 +8,10 @@
        maxZoom: 18,
        minZoom: 1   
     }).addTo(map);
+
+    _.templateSettings = {
+      interpolate : /\{\{(.+?)\}\}/g
+    };
     
     $.ajax(
      '/get_database_tracks',
@@ -16,12 +20,13 @@
        //iterate through called tracks and bind to map marker: popup track info and play track upon click
        console.log(most_recent_tracks);
        var most_recent_tracks = most_recent_tracks;
-
+       var track_ids = []
        _.each(most_recent_tracks, function(most_recent_track) {
          var coords = [];
          coords.push(most_recent_track.lat)
          coords.push(most_recent_track.lng)
-         console.log(most_recent_track.track_id)
+         track_ids.push(most_recent_track.track_id)
+         console.log(track_ids)
          L.marker(coords)
            .addTo(map)
            .bindPopup("<div class='top'>" + 
@@ -40,16 +45,22 @@
            })
            .on("click", function() { map.setView(coords, 3);
           })
-          var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-          widget.bind(SC.Widget.Events.READY, function() {
-            console.log('Ready...');
-          });
-
         });
+        console.log(track_ids);
+         // var template = '<iframe id="soundcloud_widget" src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/110581398&show_artwork=false&liking=false&sharing=false&auto_play=true" width="420" height="120"
+         // frameborder="no">' +
+         // '</iframe>';
+
+         // var footer = document.getElementsByClassName("footer")[0]
+         // footer.innerHTML+= _.template(template)
       }
     });
 
     $(document).ready(function() {
+        var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+        widget.bind(SC.Widget.Events.READY, function() {
+          console.log('Ready...');
+        });
         $('button').click(function() {
           widget.toggle();
         });
@@ -67,7 +78,7 @@
 
 <div class="footer">
   <iframe id="soundcloud_widget"
-      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/39804767&show_artwork=false&liking=false&sharing=false&auto_play=true"
+      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/110581398&show_artwork=false&liking=false&sharing=false&auto_play=true"
       width="420"
       height="120"
       frameborder="no">
