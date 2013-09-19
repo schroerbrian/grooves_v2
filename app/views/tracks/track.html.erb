@@ -1,85 +1,85 @@
 <div id="map">
-  
-  <script>  
-    var map = L.map('map', { center: [22, 122], maxBounds: [[90, -180], [-90, 180]] }).setView([10, 0.1], 1);
-
-    L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
-        attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-       maxZoom: 18,
-       minZoom: 1   
-    }).addTo(map);
-
-    _.templateSettings = {
-      interpolate : /\{\{(.+?)\}\}/g
-    };
-    
-    $.ajax(
-     '/get_database_tracks',
-     { success: function(most_recent_tracks){
-       
-       //iterate through called tracks and bind to map marker: popup track info and play track upon click
-       console.log(most_recent_tracks);
-       var most_recent_tracks = most_recent_tracks;
-       var track_ids = []
-       _.each(most_recent_tracks, function(most_recent_track) {
-         var coords = [];
-         coords.push(most_recent_track.lat)
-         coords.push(most_recent_track.lng)
-         track_ids.push(most_recent_track.track_id)
-         console.log(track_ids)
-         L.marker(coords)
-           .addTo(map)
-           .bindPopup("<div class='top'>" + 
-             "<img src='" + most_recent_track.user_avatar_url
-             + "'width='80'>" + "<p class='name'>" 
-             + most_recent_track.username  
-             + "</p></div>"  
-             + "<a href='http://soundcloud.com/" + most_recent_track.user_permalink + "/" + most_recent_track.track_permalink 
-             + "'target='_blank'>"
-             + "<em>" 
-             + most_recent_track.track_name 
-             + "</em></a><br />" 
-             + most_recent_track.user_city + ", " + most_recent_track.user_country) 
-           .on("click", function(event) {var trackId = most_recent_track.track_id;
-           onMarkerClick(trackId);
-           })
-           .on("click", function() { map.setView(coords, 3);
-          })
-        });
-        console.log(track_ids);
-         // var template = '<iframe id="soundcloud_widget" src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/110581398&show_artwork=false&liking=false&sharing=false&auto_play=true" width="420" height="120"
-         // frameborder="no">' +
-         // '</iframe>';
-
-         // var footer = document.getElementsByClassName("footer")[0]
-         // footer.innerHTML+= _.template(template)
-      }
-    });
-
-    $(document).ready(function() {
-        var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-        widget.bind(SC.Widget.Events.READY, function() {
-          console.log('Ready...');
-        });
-        $('button').click(function() {
-          widget.toggle();
-        });
-    });
-      
-    function onMarkerClick(trackId) {
-      $(".track").hide();
-      $("#track-" + trackId).show().find(".sc-trackslist a").click();
-    };
-  </script>
-
 </div> 
-
 <div class="footer">
-  <iframe id="soundcloud_widget"
-      src="http://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/110581398&show_artwork=false&liking=false&sharing=false&auto_play=true"
-      width="420"
-      height="120"
-      frameborder="no">
-  </iframe>
   <button id="button">Play / Pause</button>
 </div>
+
+<script>  
+  var map = L.map('map', { center: [22, 122], maxBounds: [[90, -180], [-90, 180]] }).setView([10, 0.1], 1);
+
+  L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
+      attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,' 
+      + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery ©'
+      + '<a href="http://cloudmade.com">CloudMade</a>',
+     maxZoom: 18,
+     minZoom: 1   
+  }).addTo(map);
+
+  $.ajax(
+   '/get_database_tracks',
+   { success: function(mostRecentTracks){
+     //iterate through called tracks and bind to map marker: popup track info and play track upon click
+     var mostRecentTracks = mostRecentTracks;
+     var trackIdArray = []
+     _.each(mostRecentTracks, function(mostRecentTrack) {
+       var coords = [];
+       coords.push(mostRecentTrack.lat)
+       coords.push(mostRecentTrack.lng)
+       trackIdArray.push(mostRecentTrack.track_id)
+       L.marker(coords)
+         .addTo(map)
+         .bindPopup("<div class='top'>" + 
+           "<img src='" + mostRecentTrack.user_avatar_url
+           + "'width='80'>" + "<p class='name'>" 
+           + mostRecentTrack.username  
+           + "</p></div>"  
+           + "<a href='http://soundcloud.com/" + mostRecentTrack.user_permalink + "/" 
+           + mostRecentTrack.track_permalink 
+           + "'target='_blank'>"
+           + "<em>" 
+           + mostRecentTrack.track_name 
+           + "</em></a><br />" 
+           + mostRecentTrack.user_city + ", " + mostRecentTrack.user_country) 
+         .on("click", function(event) {var trackId = mostRecentTrack.track_id;
+         onMarkerClick(trackId);
+         })
+         .on("click", function() { map.setView(coords, 3);
+        })
+      });
+      console.log(trackIdArray);
+
+      _.templateSettings = {
+        interpolate : /\{\{(.+?)\}\}/g
+      };
+
+      var firstTrack = trackIdArray[0]
+      console.log(firstTrack); 
+      var strVar="";
+      strVar += "<iframe id='soundcloud_widget' src='http:\/\/w.soundcloud.com\/player\/"
+      + "?url=https:\/\/api.soundcloud.com\/tracks\/"
+      + firstTrack 
+      + "&show_artwork=false&liking=false&sharing=false&auto_play=true&color=1fb18a&theme_color=33ff00'" 
+      + "width='420' height='120' frameborder='no'><\/iframe>";
+      var template = strVar;
+      var footer = document.getElementsByClassName("footer")[0]
+      var test = _.template(template, mostRecentTracks)
+      footer.innerHTML+= test
+      togglePlayPause(); 
+    }
+  });
+
+  function togglePlayPause() {
+    var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+    widget.bind(SC.Widget.Events.READY, function() {
+      console.log('Ready...');
+    });
+    $('button').click(function() {
+      widget.toggle();
+    });
+  };
+  
+  function onMarkerClick(trackId) {
+    $(".track").hide();
+    $("#track-" + trackId).show().find(".sc-trackslist a").click();
+  };
+</script>
