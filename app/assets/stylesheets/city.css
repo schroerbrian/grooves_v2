@@ -72,6 +72,11 @@ header .site_name h1 {
 #button {
 	float: right;
 }
+
+#next {
+	float: right;
+}
+
 .flashback {
 	font-size: 12px;
 	font-family: "helvetica", sans-serif;
