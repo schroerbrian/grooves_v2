@@ -31,4 +31,5 @@ gem 'geocoder'
 gem 'annotate'
 gem 'awesome_print'
 gem 'haml-rails'
+gem 'font-awesome-rails'
 
