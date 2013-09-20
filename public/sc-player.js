@@ -337,7 +337,7 @@
         // update the track duration in the progress bar
         $('.sc-duration', $player).html(timecode(track.duration));
         // put the waveform into the progress bar
-        $('.sc-waveform-container', $player).html('<img src="' + track.waveform_url +'" />');
+        // $('.sc-waveform-container', $player).html('<img src="' + track.waveform_url +'" />');
 
         $player.trigger('onPlayerTrackSwitch.scPlayer', [track]);
       },
@@ -488,7 +488,7 @@
         $player = $('<div class="sc-player loading"></div>').data('sc-player', {id: playerId}),
         $artworks = $('<ol class="sc-artwork-list"></ol>').appendTo($player),
         $info = $('<div class="sc-info"><h3></h3><h4></h4><p></p><a href="#" class="sc-info-close">X</a></div>').appendTo($player),
-        $controls = $('<div class="sc-controls"></div>').appendTo($player),
+        // $controls = $('<div class="sc-controls"></div>').appendTo($player),
         $list = $('<ol class="sc-trackslist"></ol>').appendTo($player);
 
         // add the classes of the source node to the player itself
@@ -500,15 +500,13 @@
 
         // adding controls to the player
         $player
-          .find('.sc-controls')
-            .append('<a href="#play" class="sc-play">Play</a> <a href="#pause" class="sc-pause hidden">Pause</a>')
-          .end()
           .append('<a href="#info" class="sc-info-toggle">Info</a>')
           .append('<div class="sc-scrubber"></div>')
             .find('.sc-scrubber')
               .append('<div class="sc-volume-slider"><span class="sc-volume-status" style="width:' + soundVolume +'%"></span></div>')
               .append('<div class="sc-time-span"><div class="sc-waveform-container"></div><div class="sc-buffer"></div><div class="sc-played"></div></div>')
-              .append('<div class="sc-time-indicators"><span class="sc-position"></span> | <span class="sc-duration"></span></div>');
+              .append('<div class="sc-time-indicators"><span class="sc-position"></span> | <span class="sc-duration"></span></div>')
+              .append('<div class="sc-controls"><a href="#play" class="sc-play">Play</a> <a href="#pause" class="sc-pause hidden">Pause</a></div>');
 
         // load and parse the track data from SoundCloud API
         loadTracksData($player, links, opts.apiKey);
@@ -654,7 +652,7 @@
   var scrub = function(node, xPos) {
     var $scrubber = $(node).closest('.sc-time-span'),
         $buffer = $scrubber.find('.sc-buffer'),
-        $available = $scrubber.find('.sc-waveform-container img'),
+        $available = $scrubber.find('.sc-buffer'),
         $player = $scrubber.closest('.sc-player'),
         relative = Math.min($buffer.width(), (xPos  - $available.offset().left)) / $available.width();
     onSeek($player, relative);

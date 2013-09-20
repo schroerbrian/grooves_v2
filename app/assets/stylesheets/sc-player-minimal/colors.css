@@ -1,42 +1,51 @@
 .sc-player {
-  font: 12px "Helvetica", sans-serif;
-  color: #bdc3c7;
-  font-size: 0.8em;
-  font-weight: bold;
+  font: 12px Arial, sans-serif;
+  color: #333;
+  font-size: 1.6em;
   line-height: 1.6em;
+  font-weight: bold;
+  
+}
+
+.sc-player.special {
+  border: 2px solid #ff3300;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 .sc-player a {
   text-decoration: none;
-  color: #bdc3c7;
+  color: #333;
 }
 
 /* scrubber */
 
 .sc-scrubber {
-  background-color: #bdc3c7;
+  background-color: #e5e5e5;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
 }
 
 .sc-scrubber .sc-time-span {
-  background-color: #7f8c8d;
-  opacity: 0.6;
+  background-color: #fff;
 }
 
 .sc-scrubber .sc-time-span img {
-  background-color: #bdc3c7;
-  background: -moz-linear-gradient(top, black, #96d8d9 0px, #59C5C7 90%);
-  background: -webkit-gradient(linear, left top, left 90%, from(black), color-stop(0%, #59C5C7), to(#96d8d9));
-  display: none;
+  height: 30px;
+  width: 100%;
+  background-color: #000;
 }
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played {
-  background-color: #7f8c8d; 
-  opacity: 0;
+  background-color: #fff;
+  opacity: 0.4;
 }
 
 .sc-scrubber .sc-played {
-  background-color: #ecf0f1;
-  opacity: 1;
+  background-color: #000;
+  opacity: 0.4;
 }
 
 /* controls */
@@ -47,47 +56,47 @@
 }
 
 .sc-player .sc-controls a:hover {
-  background-image: url('img/play-hover.png');
+  background: url('img/play-hover.png');
 }
 
 .sc-player .sc-controls a.sc-pause {
-  background-image: url('img/play.png');
+  background: url('img/play.png');
 }
 
 .sc-player .sc-controls a.sc-pause:hover{
-  background-image: url('img/play-hover.png');
+  background: url('img/play-hover.png');
 }
 
 .sc-player.playing .sc-controls a.sc-pause{
-  background-image: url('img/pause.png');
+  background: url('img/pause.png');
 }
 
 .sc-player.playing .sc-controls a.sc-pause:hover{
-  background-image: url('img/pause-hover.png');
+  background: url('img/pause-hover.png');
 }  
 
 .sc-scrubber .sc-time-indicators{
-  color: #7f8c8d;
-  font-size: 0.8em;
+  background: #fff;
+  color: #000;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  padding: 2px;
+  font-size: 0.4em;
+  font-weight: normal;
+  line-height: 1em;
 }
 
 /* Track listings*/
 
-.sc-player ol.sc-trackslist li, .sc-player ol.sc-trackslist a {
-  color: transparent;
-}
-
 .sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {
-  background-color: #59C5C7;
+  background-color: #fff;
+  padding: 4px;
   color: #000;
-  background: -moz-linear-gradient(top, black, #96d8d9 0px, #59C5C7 90%);
-  background: -webkit-gradient(linear, left top, left 90%, from(black), color-stop(0%, #59C5C7), to(#96d8d9));
-  -moz-box-shadow: 1px 1px 4px #333;
-  -webkit-box-shadow: 1px 1px 4px #333;
-  opacity: 0.8;
+  display: none;
 }
 
-.sc-player ol.sc-trackslist li.active a, .sc-player ol.sc-trackslist li:hover a {
+.sc-player ol.sc-trackslist li.active a {
+  display: none;
   color: #000;
 }
 
@@ -96,6 +105,7 @@
   float: right;
   padding: 0 5px;
   margin-left: 5px;
+  display: none;
 }
 
 /* Track info*/

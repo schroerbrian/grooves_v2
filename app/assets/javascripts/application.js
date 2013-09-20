@@ -13,5 +13,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require soundcloud.player.api
+//= require vendors/soundcloud.player.api
 //= require underscore.min

@@ -62,13 +62,6 @@ header .site_name h1 {
 	padding-left: 5px;
 }
 
-#map .new-tracks #rando {
-	text-decoration: none;
-	font-family: "Helvetica", sans-serif;
-	font-size: 12px;
-	text-color: #000;
-}
-
 #button {
 	float: right;
 }
@@ -80,6 +73,15 @@ header .site_name h1 {
 #test{
 	float: right;
 }
+
+#map .new-tracks #rando {
+	text-decoration: none;
+	font-family: "Helvetica", sans-serif;
+	font-size: 12px;
+	text-color: #000;
+}
+
+
 
 .flashback {
 	font-size: 12px;
@@ -169,9 +171,3 @@ header .site_name h1 {
 } 
 
 
-/*.track .skip {
-	position: relative;
-	left: 900px;
-	bottom: 10px;
-	top: 10px;
-}*/
