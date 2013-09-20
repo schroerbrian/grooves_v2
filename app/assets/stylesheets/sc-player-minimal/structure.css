@@ -39,7 +39,8 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  top: 8px;
+  bottom: 1px;
+  left: 180px;
 }
 
 .sc-player .sc-controls a{
@@ -70,8 +71,8 @@
   position: absolute;
   left: -5000px;
   bottom: 10px;
-  height: 40px;
-  width: 95.5%;
+  height: 90px;
+  width: 400px;
 }
 
 .sc-player .sc-scrubber, .sc-player.playing .sc-scrubber {
@@ -79,16 +80,14 @@
   left: 45px;
 }
 
-
-
 .sc-scrubber .sc-time-span{
-  height: 30px;
-  margin: 5px;
+  height: 7px;
+  margin: 40px 5px;
   position: relative;
 }
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played{
-  height: 30px;
+  height: 7px;
   position: absolute;
   top: 0;
   width: 0;
