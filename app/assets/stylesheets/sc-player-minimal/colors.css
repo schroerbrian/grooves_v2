@@ -29,7 +29,7 @@
 }
 
 .sc-scrubber .sc-time-span {
-  background-color: #fff;
+  background-color: red;
 }
 
 .sc-scrubber .sc-time-span img {
@@ -52,7 +52,7 @@
 
 .sc-player .sc-controls a {
   color: transparent;
-  background: url('img/play.png');
+  background: url('img/play-hover.png');
 }
 
 .sc-player .sc-controls a:hover {
@@ -68,7 +68,7 @@
 }
 
 .sc-player.playing .sc-controls a.sc-pause{
-  background: url('img/pause.png');
+  background: url('img/pause-hover.png');
 }
 
 .sc-player.playing .sc-controls a.sc-pause:hover{
