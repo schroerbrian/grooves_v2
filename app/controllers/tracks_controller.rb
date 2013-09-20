@@ -6,8 +6,6 @@ class TracksController < ApplicationController
   end
 
   def test
-  	@last_tracks = TrackData.last(5)
-  	@last_track = TrackData.last
   end
 
   #ajax call; used in test.html.erb script 

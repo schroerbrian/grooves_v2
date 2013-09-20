@@ -77,6 +77,10 @@ header .site_name h1 {
 	float: right;
 }
 
+#test{
+	float: right;
+}
+
 .flashback {
 	font-size: 12px;
 	font-family: "helvetica", sans-serif;

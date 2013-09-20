@@ -3,6 +3,7 @@
 <div class="footer">
   <button id="button">Play / Pause</button>
   <button id="next">Next</button>
+  <button id="test">Test</button>
 
 </div>
 
@@ -16,6 +17,10 @@
      maxZoom: 18,
      minZoom: 1   
   }).addTo(map);
+
+  _.templateSettings = {
+    interpolate : /\{\{(.+?)\}\}/g
+  };
 
   $.ajax(
    '/get_database_tracks',
@@ -47,49 +52,68 @@
          })
          .on("click", function() { map.setView(coords, 3);
         })
+        console.log(mostRecentTrack)
+        var trackClassId = mostRecentTrack.track_id
+        console.log(trackClassId)
+        var strVar = '<iframe id="soundcloud_widget" class= "track-widget track-widget-' + trackClassId + '"src="http:\/\/w.soundcloud.com\/player\/'
+          + '?url=https:\/\/api.soundcloud.com\/tracks\/'
+          + mostRecentTrack.track_id 
+          + '&show_artwork=false&liking=false&sharing=false&auto_play=true&theme_color=80e4a0&color=1fb18a"' 
+          + 'width="420" height="120" frameborder="no"><\/iframe>';
+        
+        var template = strVar;
+        var footer = document.getElementsByClassName("footer")[0]
+        var test = _.template(template, mostRecentTracks)
+        footer.innerHTML+= test
+
       });
       console.log(trackIdArray);
 
-      _.templateSettings = {
-        interpolate : /\{\{(.+?)\}\}/g
-      };
-
-      var firstTrack = trackIdArray[0]
-      var strVar="";
-      strVar += "<iframe id='soundcloud_widget' src='http:\/\/w.soundcloud.com\/player\/"
-      + "?url=https:\/\/api.soundcloud.com\/tracks\/"
-      + firstTrack 
-      + "&show_artwork=false&liking=false&sharing=false&auto_play=true&theme_color=80e4a0&color=1fb18a'" 
-      + "width='420' height='120' frameborder='no'><\/iframe>";
-      var template = strVar;
-      var footer = document.getElementsByClassName("footer")[0]
-      var test = _.template(template, mostRecentTracks)
+      // var firstTrack = trackIdArray[0]
+      // var strVar="";
+      // strVar += "<iframe id='soundcloud_widget' src='http:\/\/w.soundcloud.com\/player\/"
+      // + "?url=https:\/\/api.soundcloud.com\/tracks\/"
+      // + firstTrack 
+      // + "&show_artwork=false&liking=false&sharing=false&auto_play=true&theme_color=80e4a0&color=1fb18a'" 
+      // + "width='420' height='120' frameborder='no'><\/iframe>";
+      // var template = strVar;
+      // var footer = document.getElementsByClassName("footer")[0]
+      // var test = _.template(template, mostRecentTracks)
       // togglePlayPause();
       // var odds = _.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
       // => [1, 3, 5]
-      $('#next').click(function() {
-        footer.innerHTML+= test
+      // $('#next').click(function() {
+      //   var firstTrack = trackIdArray[index]
+      //   index++
+      //   console.log(index)
 
-        var nextTrackArray = _.reject(trackIdArray, function(trackId){ return trackId == firstTrack })
-        console.log(nextTrackArray[0]);
-        console.log(trackIdArray);
+      //   var nextTrackArray = _.reject(trackIdArray, function(trackId){ return trackId == firstTrack })
+      //   var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+      //   widget.bind(SC.Widget.Events.READY, function() {
+      //     console.log('Ready...');
+      //   });
+      //   $('#button').click(function() {
+      //     widget.toggle();
+      //   });
+      //   console.log(nextTrackArray[0]);
+      //   console.log(trackIdArray);
 
-      });
+      // });
     }
   });
 
-  function togglePlayPause() {
-    var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-    widget.bind(SC.Widget.Events.READY, function() {
-      console.log('Ready...');
-    });
-    $('#button').click(function() {
-      widget.toggle();
-    });
-  };
+  // function togglePlayPause() {
+  //   var widget = SC.Widget(document.getElementById('soundcloud_widget'));
+  //   widget.bind(SC.Widget.Events.READY, function() {
+  //     console.log('Ready...');
+  //   });
+  //   $('#button').click(function() {
+  //     widget.toggle();
+  //   });
+  // };
  
   function onMarkerClick(trackId) {
-    $(".track").hide();
-    $("#track-" + trackId).show().find(".sc-trackslist a").click();
+    $("#soundcloud_widget").hide();
+    $(".track-" + trackId).show();
   };
 </script>
