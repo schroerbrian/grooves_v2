@@ -77,6 +77,11 @@
   width: 400px;
 }
 
+.sc-scrubber .sc-volume-slider {
+  height: 30px;
+  background-color: white;
+}
+
 .sc-player .sc-scrubber, .sc-player.playing .sc-scrubber {
   display: block;
   left: 45px;
@@ -84,8 +89,10 @@
 
 .sc-scrubber .sc-time-span{
   height: 7px;
-  margin: 40px 5px;
+  width: 85%;
+  margin: 7px 28px;
   position: relative;
+  -webkit-border-radius: 5px;
 }
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played{
@@ -94,12 +101,19 @@
   top: 0;
   width: 0;
   -webkit-transition: width 0.1s linear;
+  -webkit-border-radius: 5px;
 }
 
 .sc-scrubber .sc-time-indicators{
   position: absolute;
   right: 0;
-  top: -20px;
+  left: 348px;
+  top: 35px;
+}
+
+.sc-time-indicators .sc-position {
+  position: relative;
+  right: 350px;
 }
 
 /* tracks */

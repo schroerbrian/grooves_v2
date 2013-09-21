@@ -29,7 +29,7 @@
 }
 
 .sc-scrubber .sc-time-span {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 1);
 }
 
 .sc-scrubber .sc-time-span img {
@@ -89,8 +89,7 @@
 }  
 
 .sc-scrubber .sc-time-indicators{
-  background: #fff;
-  color: #000;
+  color: rgba(252, 77, 83, .8);
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   padding: 2px;
