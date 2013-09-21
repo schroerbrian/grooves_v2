@@ -37,20 +37,21 @@
 
 .sc-player .sc-controls{
   position: absolute;
-  width: 40px;
+  width: 200px;
   height: 40px;
   bottom: 1px;
-  left: 180px;
+  left: 100px;
 }
 
 .sc-player .sc-controls a{
-  display: block;
+  display: inline-block;
   width: 40px;
   height: 40px;
 }
 
 .sc-player .sc-controls a.sc-play, .sc-player .sc-controls a.sc-pause{
   text-indent: -3000px;
+  position: relative;
 }
 
 .sc-player .sc-controls a.sc-pause{
@@ -59,10 +60,11 @@
 
 .sc-player.playing .sc-controls a.sc-play{
   display: none;
+
 }
 
 .sc-player.playing .sc-controls a.sc-pause{
-  display: block;
+  display: inline-block;
 }
 
 /* scrubber */
