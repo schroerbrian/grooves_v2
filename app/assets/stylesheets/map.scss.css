@@ -13,13 +13,14 @@ header {
 	width: 295px;
 	box-shadow: inset 3px 9x #000000;
 	position: fixed;
-	top: 0;
+	top: -3px;
 	z-index: 999;
-	border: 2px solid;
 	border-top: 0;
 	margin-left: 60px;
-	background: #fff;
+	background: rgba(236, 240, 241, 0.8);
 	padding-top: 5px;
+	-webkit-border-radius: 5px;
+
 }
 
 header .site_name h1 {
@@ -138,7 +139,7 @@ header .site_name h1 {
 
 .footer {
 	height: 40%;
-	background: #2c3e50;
+	background: rgba(52,152,219, 0.7);
   padding: 2%;
   text-align: center;
   position: fixed;

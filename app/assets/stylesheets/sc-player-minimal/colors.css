@@ -24,12 +24,12 @@
 
 .sc-scrubber {
   background-color: #e5e5e5;
-  -moz-border-radius: 0px;
-  -webkit-border-radius: 0px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 .sc-scrubber .sc-time-span {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: rgba(52,152,219, 0.7);
 }
 
 .sc-scrubber .sc-time-span img {
@@ -40,29 +40,43 @@
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played {
   background-color: #fff;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 .sc-scrubber .sc-played {
   background-color: #000;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 /* controls */
 
+.sc-controls .sc-prev, .sc-next, .sc-play, .sc-pause {
+  background-repeat: no-repeat;
+  padding: 0 3px 0 3px;
+}
+
+.sc-prev {
+  margin-left: 11px;
+}
+
 .sc-player .sc-controls .sc-prev {
   color: transparent;
   background: url('img/prev.png');
+  background-repeat: no-repeat;
+
 }
 
 .sc-player .sc-controls .sc-next {
   color: transparent;
   background: url('img/next.png');
+  background-repeat: no-repeat;
+
 }
 
 .sc-player .sc-controls .sc-play {
   color: transparent;
   background: url('img/play-hover.png');
+  background-repeat: no-repeat;
   right: -4px;
 }
 
@@ -72,6 +86,7 @@
 
 .sc-player .sc-controls .sc-pause {
   background: url('img/play-hover.png');
+  background-repeat: no-repeat;
   left: -3px;
 
 }
@@ -82,14 +97,16 @@
 
 .sc-player.playing .sc-controls a.sc-pause{
   background: url('img/pause-hover.png');
+  background-repeat: no-repeat;
+
 }
 
-.sc-player.playing .sc-controls a.sc-pause:hover{
+/*.sc-player.playing .sc-controls a.sc-pause:hover{
   background: url('img/pause-hover.png');
-}  
+}  */
 
 .sc-scrubber .sc-time-indicators{
-  color: rgba(252, 77, 83, .8);
+  color: rgba(52,152,219, 0.7);
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   padding: 2px;
@@ -132,6 +149,7 @@
   color: #003399;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   -moz-box-shadow: 1px 1px 4px #ccc;
   -webkit-box-shadow: 1px 1px 4px #ccc;
   padding: 4px;

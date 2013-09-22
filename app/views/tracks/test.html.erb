@@ -62,18 +62,22 @@
 
 					 	var template = '<div class="track" id="track-{{track_id }}">' +
 						 	'<a href="http://soundcloud.com/{{user_permalink}}/{{track_permalink}} " class="sc-player"></a>' +
-						 	'<div class="track_info">' +
+					 		'</div>' +
+					  '</div>';
+
+					  var info = '<div class="track_info">' +
 						 		'<ul>' +
 						 			'<li>{{username}}</li> <strong>||</strong>' +
 						 			'<li><em>{{track_name}} </em></li> <strong>||</strong>' +
 						 			'<li> {{user_city}}, {{user_country}}</li>' +
-						 		'</ul>' +
-					 		'</div>' +
-					  '</div>';
+						 		'</ul>';
+						console.log(info);
 
 					 var footer = document.getElementsByClassName("footer")[0]
-					 var current_track = _.template(template, lastTrack)
-					 footer.innerHTML+= current_track
+					 var currentTrack = _.template(template, lastTrack)
+					 var currentTrackInfo = _.template(info, lastTrack)
+					 footer.innerHTML+= currentTrack
+					 // footer.innerHTML+= currentTrackInfo
 
 				});
 
