@@ -115,16 +115,20 @@
 
 /* Track listings*/
 
-/*.sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {
+.sc-player ol.sc-trackslist li.active {
+  background: rgba(52,152,219, 0.7); 
+}
+
+.sc-player ol.sc-trackslist li.active a {
+}
+
+/* .sc-player ol.sc-trackslist li:hover {
   background-color: #fff;
   padding: 4px;
   color: #000;
   display: none;
 }*/
 
-.sc-player ol.sc-trackslist li.active a {
-  color: #000;
-}
 
 .sc-track-duration {
   text-align: right;

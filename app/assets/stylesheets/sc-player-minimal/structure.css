@@ -130,23 +130,36 @@
   position: absolute;
   width: 400px;
   height: 100%;
-  top: 52px;
-  font-size: 0.5em;
+  top: 51px;
+  font-size: 0.44em;
   line-height: 1em;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .sc-player ol.sc-trackslist li {
-  width: 85%;
+  width: 95%;
   position: relative;
-  left: 7.5%;
-  padding: 8px 0 8px 0;
-  border-bottom: 2px solid rgba(127, 127, 127, 0.2);
+  left: 0;
+  padding: 8px 0 8px 18px;
   list-style: none;
   cursor: default;
+  border-left: 1px solid rgba(255,255,255,.5);
+  border-right: 1px solid rgba(255,255,255,.5);
+}
+
+ol.sc-trackslist li:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+ol.sc-trackslist li:last-child {
+  border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
 .sc-player ol.sc-trackslist a {
   cursor: default;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
 }
 
 /* Track info*/
