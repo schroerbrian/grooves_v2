@@ -2,7 +2,7 @@
   width: 100%;
   height: 60px;
   position: relative;
-  margin: 20px 0;
+  margin: 34% 25px;
 }
 
 .sc-player ol, .sc-player li{
@@ -71,20 +71,26 @@
 
 .sc-scrubber {
   position: absolute;
-  left: -5000px;
   bottom: 10px;
   height: 90px;
   width: 400px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
 }
 
 .sc-scrubber .sc-volume-slider {
   height: 40px;
   background-color: white;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .sc-player .sc-scrubber, .sc-player.playing .sc-scrubber {
   display: block;
-  left: 45px;
 }
 
 .sc-scrubber .sc-time-span{
@@ -122,20 +128,25 @@
 
 .sc-player ol.sc-trackslist{
   position: absolute;
-  float: left;
-  width: 92%;
+  width: 400px;
   height: 100%;
-  left: 45px;
-  overflow: auto;
+  top: 52px;
+  font-size: 0.5em;
+  line-height: 1em;
 }
 
-.sc-player ol.sc-trackslist li{
-  float: left;
-  width: 95.5%;
-  cursor: pointer;
-  margin: 5px;
-  padding: 5px;
+.sc-player ol.sc-trackslist li {
+  width: 85%;
+  position: relative;
+  left: 7.5%;
+  padding: 8px 0 8px 0;
+  border-bottom: 2px solid rgba(127, 127, 127, 0.2);
   list-style: none;
+  cursor: default;
+}
+
+.sc-player ol.sc-trackslist a {
+  cursor: default;
 }
 
 /* Track info*/
@@ -143,12 +154,14 @@
 .sc-player .sc-info{
   position: absolute;
   top: -66%;
-  left: 45px;
   width : 400px;
-/*  padding: 5px; */
   height: 30px;
   z-index: 500;
   color: rgba(127,127,127, 0.8);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
 }
 
 .sc-info a {
@@ -174,7 +187,6 @@
 }
 
 .sc-player .sc-info.active{
-  left: 45px;
   top: -75%;
 }
 

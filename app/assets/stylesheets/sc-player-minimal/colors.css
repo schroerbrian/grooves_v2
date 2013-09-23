@@ -24,8 +24,6 @@
 
 .sc-scrubber {
   background-color: #e5e5e5;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
 }
 
 .sc-scrubber .sc-time-span {
@@ -117,15 +115,14 @@
 
 /* Track listings*/
 
-.sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {
+/*.sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {
   background-color: #fff;
   padding: 4px;
   color: #000;
   display: none;
-}
+}*/
 
 .sc-player ol.sc-trackslist li.active a {
-  display: none;
   color: #000;
 }
 

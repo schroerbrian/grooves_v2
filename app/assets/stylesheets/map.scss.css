@@ -82,8 +82,6 @@ header .site_name h1 {
 	text-color: #000;
 }
 
-
-
 .flashback {
 	font-size: 12px;
 	font-family: "helvetica", sans-serif;
@@ -138,13 +136,13 @@ header .site_name h1 {
 }
 
 .footer {
-	height: 40%;
+	height: 100%;
 	background: rgba(52,152,219, 0.7);
-  padding: 2%;
   text-align: center;
   position: fixed;
   bottom: 0;
-  width: 96%;
+  right: 0;
+  width: 450px;
 }
 
 .track:not(:first-child) {
