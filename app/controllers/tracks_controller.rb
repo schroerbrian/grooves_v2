@@ -10,7 +10,7 @@ class TracksController < ApplicationController
 
   #ajax call; used in test.html.erb script 
   def get_database_tracks
-  	most_recent_database_tracks = TrackData.last(5)
+  	most_recent_database_tracks = TrackData.last(3)
   	render :json => most_recent_database_tracks
   end
 
