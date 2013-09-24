@@ -99,8 +99,6 @@ header .site_name h1 {
 	target-name: new;
 	target-new: tab;
 	font-family: "Helvetica", sans-serif;
-	mar
-/*	border-top: 2px solid #000;*/
 }
 
 .leaflet-popup-content a:link {
