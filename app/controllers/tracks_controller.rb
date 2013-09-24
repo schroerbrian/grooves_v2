@@ -10,8 +10,10 @@ class TracksController < ApplicationController
 
   #ajax call; used in test.html.erb script 
   def get_database_tracks
-  	most_recent_database_tracks = TrackData.last(5)
-  	render :json => most_recent_database_tracks
+    last_offset = 5
+    reverse_offset = TrackData.count - last_offset
+  	requested_tracks = TrackData.limit(5).offset(reverse_offset)
+  	render :json => requested_tracks
   end
 
   #test controllers are below

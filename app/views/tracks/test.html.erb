@@ -77,14 +77,13 @@
 					'/get_database_tracks',
 					{ success: function(lastTracks){
 						var trackUrlConcatStrings = "";
-						
 						//iterate through called tracks and bind to map marker: 
 						//popup track info and play track upon click
 						_.each(lastTracks, function(lastTrack) {
 							var coords = [];
+							
 							coords.push(lastTrack.lat)
 							coords.push(lastTrack.lng)
-
 							L.marker(coords)
 								.addTo(map)
 								.bindPopup("<div class='top'>" 
