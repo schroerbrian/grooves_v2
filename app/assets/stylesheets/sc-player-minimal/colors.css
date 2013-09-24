@@ -59,21 +59,21 @@
 
 .sc-player .sc-controls .sc-prev {
   color: transparent;
-  background: url('img/prev.png');
+  background: url('../prev.png');
   background-repeat: no-repeat;
 
 }
 
 .sc-player .sc-controls .sc-next {
   color: transparent;
-  background: url('img/next.png');
+  background: url('../next.png');
   background-repeat: no-repeat;
 
 }
 
 .sc-player .sc-controls .sc-play {
   color: transparent;
-  background: url('img/play-hover.png');
+  background: url('../play-hover.png');
   background-repeat: no-repeat;
   right: -4px;
 }
@@ -83,7 +83,7 @@
 }*/
 
 .sc-player .sc-controls .sc-pause {
-  background: url('img/play-hover.png');
+  background: url('../play-hover.png');
   background-repeat: no-repeat;
   left: -3px;
 
@@ -94,7 +94,7 @@
 }*/
 
 .sc-player.playing .sc-controls a.sc-pause{
-  background: url('img/pause-hover.png');
+  background: url('../pause-hover.png');
   background-repeat: no-repeat;
 
 }
