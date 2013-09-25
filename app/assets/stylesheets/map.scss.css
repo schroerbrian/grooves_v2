@@ -160,6 +160,7 @@ header .site_name h1 {
 } 
 
 .call-tracks button {
+	display: inline-block;
 	position: relative;
 	left: 20px;
 }
