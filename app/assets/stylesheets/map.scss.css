@@ -10,27 +10,28 @@ body {
 }
 
 header {
-	height: 83px;
+	height: 80px;
 	width: 100%;
 	position: relative;
 	top: 10px;
 	border-top: 0;
-	background: rgba(236, 240, 241, 0.4);
+	background: rgba(236, 240, 241, 0.6);
 	padding-top: 8px;
 }
 
 header .site_name h1 {
 	text-transform: uppercase;
 	font-size: 24px;
-	margin: -5px 15px 10px 15px;
+	margin: -3px 15px 10px 15px;
 	padding-top: 10px;
-	padding-bottom: 8px;
-	border-bottom: 2px solid rgba(255,255,255,0.2);
+	padding-bottom: 0px;
+	color: rgba(26,76,109,1);
 }
 
 .site_name h3 {
 	margin-top: -3px;
 	font-size: 18px;
+	color: rgba(52,152,219, 1);
 }
 
 .new-tracks {

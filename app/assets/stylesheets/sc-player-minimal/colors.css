@@ -51,6 +51,12 @@
 .sc-controls .sc-prev, .sc-next, .sc-play, .sc-pause {
   background-repeat: no-repeat;
   padding: 0 3px 0 3px;
+  cursor: default;
+}
+
+.sc-prev:hover, .sc-play:hover, .sc-next:hover, 
+.sc-pause:hover  {
+  opacity: 0.8;
 }
 
 .sc-prev {
@@ -76,6 +82,7 @@
   background: url('../play-hover.png');
   background-repeat: no-repeat;
   right: -4px;
+
 }
 
 /*.sc-player .sc-controls sc-play:hover {
@@ -118,6 +125,11 @@
 .sc-player ol.sc-trackslist li.active {
   background: rgba(52,152,219, 0.7); 
 }
+
+.sc-player ol.sc-trackslist li:hover {
+  background: rgba(52,152,219, 0.4); 
+}
+
 
 .sc-player ol.sc-trackslist li.active a {
 }
