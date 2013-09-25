@@ -162,4 +162,5 @@ header .site_name h1 {
 .call-tracks button {
 	position: relative;
 	left: 20px;
+	display: none;
 }
