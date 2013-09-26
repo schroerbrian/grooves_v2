@@ -8,4 +8,7 @@ through a geocoding tool. This is indicated by a marker on the mop, which contai
 play the called tracks. Grooves is still a work in progress, but check out Grooves v1 to see how vastly improved it is already!
 
 Grooves v2: http://globalgrooves.herokuapp.com/test
+
 Grooves v1: http://grooves.herokuapp.com/
+
+Note: Updates to come soon, including the ability to load new tracks using AJAX.
