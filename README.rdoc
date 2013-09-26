@@ -2,3 +2,10 @@
 
 Grooves v2 will improve upon several features of my first version of Grooves. It includes a custom designed flat music widget,
 track access from a database rather than calling SoundCloud each time (much faster that way) and an improved and more seamless user experience.
+
+Grooves organizes recently uploaded SoundCloud tracks by geolocation. First, it grabs the track, then plots the track's geolocation by running the uploader's city and country
+through a geocoding tool. This is indicated by a marker on the mop, which contains a pop-up with info on the track. A flat and translucent sidebar contains the widget where users may 
+play the called tracks. Grooves is still a work in progress, but check out Grooves v1 to see how vastly improved it is already!
+
+Grooves v2: http://globalgrooves.herokuapp.com/test
+Grooves v1: http://grooves.herokuapp.com/
