@@ -15,7 +15,7 @@ header {
 	position: relative;
 	top: 10px;
 	border-top: 0;
-	background: rgba(236, 240, 241, 0.6);
+	background: rgba(236, 240, 241, 0.5);
 	padding-top: 8px;
 }
 
@@ -25,13 +25,13 @@ header .site_name h1 {
 	margin: -3px 15px 10px 15px;
 	padding-top: 10px;
 	padding-bottom: 0px;
-	color: rgba(26,76,109,1);
+	color: rgba(52,152,219,0.7);
 }
 
 .site_name h3 {
 	margin-top: -3px;
 	font-size: 18px;
-	color: rgba(52,152,219, 1);
+	color: rgba(127,127,127,0.5);
 }
 
 .new-tracks {
