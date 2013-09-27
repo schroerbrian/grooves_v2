@@ -11,7 +11,10 @@ namespace :valid_track_urls do
       url = URI.parse("http://soundcloud.com/#{track.user_permalink}/#{track.track_permalink}")
       req = Net::HTTP.new(url.host, url.port)
       res = req.request_head(url.path)
-      puts(url) if res.code != "200"
+      if res.code != "200"
+        puts("Deleting #{url}")
+        track.delete
+      end  
     end 
 
   end 
