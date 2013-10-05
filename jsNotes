@@ -1,0 +1,13 @@
+CODE SNIPPETS
+<script type="text/javascript">
+// wire a button to play/pause widget
+
+$(document).on('click','.get-more-tracks', function(event) {
+    var $list = $(this).closest('.footer').find('ol.sc-trackslist');
+    // simulate the click in the tracklist
+    $list.find('li.active').click();
+    return false;
+});
+
+
+</script>
