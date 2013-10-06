@@ -9,6 +9,8 @@ body {
   font-family: 'helvetica', sans serif;
 }
 
+ /*HEADER*/ 
+
 header {
 	height: 80px;
 	width: 100%;
@@ -159,8 +161,21 @@ header .site_name h1 {
 	margin-right: 0px;
 } 
 
-.call-tracks button {
+.call-tracks .get-more-tracks {
 	display: inline-block;
 	position: relative;
 	left: 20px;
+	margin-top: 20px;
+	padding: 8px 5px;
+	border: 2px solid rgba(229,98,108, .8);
+	font-size: 12px;
+	font-family: 'arial', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold; 
+	color: rgba(229,98,108, .7);
+	cursor: default;
+}
+
+.get-more-tracks:hover {
+	border: 2px solid rgba(229,98,108, .5);	
 }

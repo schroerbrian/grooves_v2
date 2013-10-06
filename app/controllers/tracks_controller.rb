@@ -10,12 +10,9 @@ class TracksController < ApplicationController
 
   #ajax call; used in test.html.erb script 
   def get_database_tracks
-    binding.pry
-
     if cookies[:offset].blank?
       cookies[:offset] = 5
-      c = cookies[:offset].to_i
-      reverse_offset = TrackData.count - offset_number
+      reverse_offset = TrackData.count - cookies[:offset]
       requested_tracks = TrackData.limit(5).offset(reverse_offset)
       render :json => requested_tracks 
     else  

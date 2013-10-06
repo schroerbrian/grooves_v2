@@ -401,6 +401,7 @@
         var $player = $(player);
         // continue playing through all players
         log('track finished get the next one');
+        console.log("dumb");
         $nextItem = $('.sc-trackslist li.active', $player).next('li');
         // try to find the next track in other player
         if(!$nextItem.length){
