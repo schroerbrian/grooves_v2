@@ -7,7 +7,7 @@ namespace :trackdata do
 
 		puts "You are pulling tracks from Soundcloud..."
 		client = Soundcloud.new(:client_id => "e9e8fbf8ac2f57eb0f54519af9c2f22e")
-		tracks = client.get('/tracks', :limit => 200)
+		tracks = client.get('/tracks', :limit => 50)
 		
 		downloaded_tracks = []
 		tracks.each do |track|
@@ -46,8 +46,7 @@ namespace :trackdata do
 			   		:user_avatar_url => downloaded_track[:user].avatar_url,
 			   		:lat => downloaded_track[:coordinates].first, 
 			   		:lng => downloaded_track[:coordinates].last,
-			   		:coordinates << downloaded_track[:coordinates].first,
-			   		:coordinates << downloaded_track[:coordinates].last
+			   		:coordinates => [downloaded_track[:coordinates].first, downloaded_track[:coordinates].last]
 			   		)
 				end 
 			end 
