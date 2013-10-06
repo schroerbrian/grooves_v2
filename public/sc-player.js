@@ -607,7 +607,7 @@
     loadArtworks: 5,
     // the default Api key should be replaced by your own one
     // get it here http://soundcloud.com/you/apps/new
-    apiKey: 'htuiRd1JP11Ww0X72T1C3g'
+    apiKey: 'e9e8fbf8ac2f57eb0f54519af9c2f22e'
   };
 
 
