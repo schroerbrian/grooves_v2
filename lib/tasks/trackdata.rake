@@ -45,7 +45,9 @@ namespace :trackdata do
 			   		:user_permalink => downloaded_track[:user].permalink, 
 			   		:user_avatar_url => downloaded_track[:user].avatar_url,
 			   		:lat => downloaded_track[:coordinates].first, 
-			   		:lng => downloaded_track[:coordinates].last
+			   		:lng => downloaded_track[:coordinates].last,
+			   		:coordinates << downloaded_track[:coordinates].first,
+			   		:coordinates << downloaded_track[:coordinates].last
 			   		)
 				end 
 			end 
