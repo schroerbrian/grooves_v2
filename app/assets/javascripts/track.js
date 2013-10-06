@@ -10,6 +10,9 @@ $(document).ready(function() {
         minZoom: 1   
     }).addTo(map);
 
+  duh = map;
+  console.log(duh);
+
   //TRACKS STUFF
   _.templateSettings = {
     interpolate : /\{\{(.+?)\}\}/g
@@ -29,7 +32,7 @@ $(document).ready(function() {
       var coords = [];
       coords.push(lastTrack.lat);
       coords.push(lastTrack.lng);
-
+      console.log(coords);
       L.marker(coords)
         .addTo(map)
         .bindPopup("<div class='top'>" 
