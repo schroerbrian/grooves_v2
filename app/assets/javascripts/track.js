@@ -10,8 +10,7 @@ $(document).ready(function() {
         minZoom: 1   
     }).addTo(map);
 
-  duh = map;
-  console.log(duh);
+  mapObject = map;
 
   //TRACKS STUFF
   _.templateSettings = {
@@ -24,16 +23,10 @@ $(document).ready(function() {
   { success: function(lastTracks){
     var trackUrlConcatStrings = "";
     
-    // $('a.your-link-class').scPlayer();
-
     // Iterate through called tracks and bind to map marker.
     // Popup track info and play track upon click
     _.each(lastTracks, function(lastTrack) {
-      var coords = [];
-      coords.push(lastTrack.lat);
-      coords.push(lastTrack.lng);
-      console.log(coords);
-      L.marker(coords)
+      L.marker(lastTrack.coordinates)
         .addTo(map)
         .bindPopup("<div class='top'>" 
           + "<img src='" + lastTrack.user_avatar_url
@@ -89,11 +82,8 @@ $(document).ready(function() {
       //iterate through called tracks and bind to map marker: 
       //popup track info and play track upon click
       _.each(lastTracks, function(lastTrack) {
-        var coords = [];
       
-        coords.push(lastTrack.lat);
-        coords.push(lastTrack.lng);
-        L.marker(coords)
+        L.marker(lastTrack.coordinates)
           .addTo(map)
           .bindPopup("<div class='top'>" 
             + "<img src='" + lastTrack.user_avatar_url
