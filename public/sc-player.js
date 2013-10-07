@@ -653,7 +653,7 @@
   var scrub = function(node, xPos) {
     var $scrubber = $(node).closest('.sc-time-span'),
         $buffer = $scrubber.find('.sc-buffer'),
-        $available = $scrubber.find('.sc-buffer'),
+        $available = $scrubber.find('.sc-waveform-container img'),
         $player = $scrubber.closest('.sc-player'),
         relative = Math.min($buffer.width(), (xPos  - $available.offset().left)) / $available.width();
     onSeek($player, relative);
