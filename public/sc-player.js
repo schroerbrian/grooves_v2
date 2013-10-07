@@ -416,6 +416,7 @@
         var currentTrackIndex = jQuery.inArray('active', trackClasses);
             trackCoordinates = trackObjects[currentTrackIndex].coordinates;
         mapObject.setView(trackCoordinates, 4);
+        trackMarkers[currentTrackIndex].openPopup();
       },
       soundVolume = function() {
         var vol = 80,

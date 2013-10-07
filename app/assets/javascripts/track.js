@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   "use strict";
   //calling map and setting view to a static location
-  var map = L.map('map').setView([10, 0.1], 3); /*{maxBounds: [[90, -180], [-90, 180]] }). */ 
+  var map = L.map('map').setView([0, 0.1], 3); /*{maxBounds: [[90, -180], [-90, 180]] }). */ 
 
     L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
@@ -11,7 +11,6 @@ $(document).ready(function() {
     }).addTo(map);
 
   mapObject = map;
-
   //TRACKS STUFF
   _.templateSettings = {
     interpolate : /\{\{(.+?)\}\}/g
@@ -56,8 +55,10 @@ $(document).ready(function() {
       trackUrlConcatStrings += trackUrlString;
       console.log(marker);
       trackMarkers.push(marker);
+      trackMarkers[0].openPopup();
     });
     
+    map.setView(trackObjects[0].coordinates, 3);    
     var template = '<div class="sc-player">' + trackUrlConcatStrings + '</div>';
     var widgetContainer = document.getElementsByClassName("widget-container")[0];
     var currentTrack = _.template(template, 'null');
@@ -108,16 +109,15 @@ $(document).ready(function() {
           })
           .on("click", function() { map.setView(lastTrack.coordinates, 4);
           });
-         // if i.zero? 
-          // .openPopup();
-         // end
+          trackMarkers[0].openPopup();
+
         var trackUrlString = "<a href='http://soundcloud.com/" + lastTrack.user_permalink 
           + "/" + lastTrack.track_permalink + "'></a>"; 
         trackUrlConcatStrings += trackUrlString;
-        console.log(marker);
         trackMarkers.push(marker);
       });
       
+      map.setView(trackObjects[0].coordinates, 3);    
       var template = '<div class="sc-player">' + trackUrlConcatStrings + '</div>';
       var widgetContainer = document.getElementsByClassName("widget-container")[0];
       var currentTrack = _.template(template, 'null');
