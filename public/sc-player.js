@@ -403,6 +403,7 @@
         log('track finished get the next one');
         mapObject.setView([22, 122], 4);
         $nextItem = $('.sc-trackslist li.active', $player).next('li');
+        console.log($nextItem);
         // try to find the next track in other player
         if(!$nextItem.length){
           $nextItem = $player.nextAll('div.sc-player:first').find('.sc-trackslist li.active');

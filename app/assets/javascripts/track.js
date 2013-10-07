@@ -26,6 +26,8 @@ $(document).ready(function() {
     // Iterate through called tracks and bind to map marker.
     // Popup track info and play track upon click
     _.each(lastTracks, function(lastTrack) {
+
+      trackObjects.push(lastTrack);
       L.marker(lastTrack.coordinates)
         .addTo(map)
         .bindPopup("<div class='top'>" 
@@ -82,7 +84,8 @@ $(document).ready(function() {
       //iterate through called tracks and bind to map marker: 
       //popup track info and play track upon click
       _.each(lastTracks, function(lastTrack) {
-      
+        
+        trackObjects.push(lastTrack);
         L.marker(lastTrack.coordinates)
           .addTo(map)
           .bindPopup("<div class='top'>" 
