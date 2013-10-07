@@ -71,7 +71,7 @@ $(document).ready(function() {
     $('.sc-player, .sc-player-engine-container').remove();
     $('.sc-player.playing a.sc-pause').click();
     var scripts = document.getElementsByTagName("script");
-    var scPlayerScriptTag = scripts[11];
+    var scPlayerScriptTag = scripts[scripts.length-1];
     scPlayerScriptTag.remove();
     
     $.ajax(

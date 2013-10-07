@@ -2,24 +2,21 @@
 <html>
 <head>
   <title>Grooves</title>
-  <script type="text/javascript">   
-  var mapObject = undefined; 
-      duhTracks = [];
-  </script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
-  <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript"> 
+    // Assigning global variables to be used across all scripts
+    var mapObject = undefined; 
+    trackObjects = []; 
+  </script>
   <script src="http://w.soundcloud.com/player/api.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
 </head>
 <body>
 
 <%= yield %>
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js">
-	</script>
 
 </body>
 

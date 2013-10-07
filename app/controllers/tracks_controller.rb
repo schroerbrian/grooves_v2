@@ -12,15 +12,12 @@ class TracksController < ApplicationController
   def get_database_tracks
     if cookies[:offset].blank?
       cookies[:offset] = 5
-      reverse_offset = TrackData.count - cookies[:offset]
-      requested_tracks = TrackData.limit(5).offset(reverse_offset)
-      render :json => requested_tracks 
     else  
       cookies[:offset] = cookies[:offset].to_i + 5
-      reverse_offset = TrackData.count - cookies[:offset]
-      requested_tracks = TrackData.limit(5).offset(reverse_offset)
-      render :json => requested_tracks
     end 
+    reverse_offset = TrackData.count - cookies[:offset]
+    requested_tracks = TrackData.limit(5).offset(reverse_offset)
+    render :json => requested_tracks
   end
 
   #test controllers are below
