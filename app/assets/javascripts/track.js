@@ -53,7 +53,6 @@ $(document).ready(function() {
       var trackUrlString = "<a href='http://soundcloud.com/" + lastTrack.user_permalink 
         + "/" + lastTrack.track_permalink + "'></a>"; 
       trackUrlConcatStrings += trackUrlString;
-      console.log(marker);
       trackMarkers.push(marker);
       trackMarkers[0].openPopup();
     });
@@ -75,6 +74,8 @@ $(document).ready(function() {
   // Call more tracks 
 
   $('.get-more-tracks').click(function(){
+    trackMarkers.length = 0;
+    trackObjects.length = 0;
     $('.sc-player, .sc-player-engine-container').remove();
     $('.sc-player.playing a.sc-pause').click();
     var scripts = document.getElementsByTagName("script");
@@ -109,12 +110,12 @@ $(document).ready(function() {
           })
           .on("click", function() { map.setView(lastTrack.coordinates, 4);
           });
+          trackMarkers.push(marker);
           trackMarkers[0].openPopup();
 
         var trackUrlString = "<a href='http://soundcloud.com/" + lastTrack.user_permalink 
           + "/" + lastTrack.track_permalink + "'></a>"; 
         trackUrlConcatStrings += trackUrlString;
-        trackMarkers.push(marker);
       });
       
       map.setView(trackObjects[0].coordinates, 3);    
