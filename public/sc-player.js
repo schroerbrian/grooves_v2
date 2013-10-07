@@ -401,14 +401,21 @@
         var $player = $(player);
         // continue playing through all players
         log('track finished get the next one');
-        mapObject.setView([22, 122], 4);
         $nextItem = $('.sc-trackslist li.active', $player).next('li');
-        console.log($nextItem);
         // try to find the next track in other player
         if(!$nextItem.length){
           $nextItem = $player.nextAll('div.sc-player:first').find('.sc-trackslist li.active');
         }
         $nextItem.click();
+        var trackClasses = [];
+           children = $nextItem.parent().children();
+        children.each(function(i,e) { 
+          var eClass = $(e).attr('class');
+            trackClasses.push(eClass)
+        });
+        var currentTrackIndex = jQuery.inArray('active', trackClasses);
+            trackCoordinates = trackObjects[currentTrackIndex].coordinates;
+        mapObject.setView(trackCoordinates, 4);
       },
       soundVolume = function() {
         var vol = 80,
