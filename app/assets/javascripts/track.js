@@ -28,6 +28,8 @@ $(document).ready(function() {
     _.each(lastTracks, function(lastTrack) {
 
       trackObjects.push(lastTrack);
+      
+      var marker = 
       L.marker(lastTrack.coordinates)
         .addTo(map)
         .bindPopup("<div class='top'>" 
@@ -52,6 +54,8 @@ $(document).ready(function() {
       var trackUrlString = "<a href='http://soundcloud.com/" + lastTrack.user_permalink 
         + "/" + lastTrack.track_permalink + "'></a>"; 
       trackUrlConcatStrings += trackUrlString;
+      console.log(marker);
+      trackMarkers.push(marker);
     });
     
     var template = '<div class="sc-player">' + trackUrlConcatStrings + '</div>';
@@ -86,7 +90,7 @@ $(document).ready(function() {
       _.each(lastTracks, function(lastTrack) {
         
         trackObjects.push(lastTrack);
-        L.marker(lastTrack.coordinates)
+        var marker = L.marker(lastTrack.coordinates)
           .addTo(map)
           .bindPopup("<div class='top'>" 
             + "<img src='" + lastTrack.user_avatar_url
@@ -110,6 +114,8 @@ $(document).ready(function() {
         var trackUrlString = "<a href='http://soundcloud.com/" + lastTrack.user_permalink 
           + "/" + lastTrack.track_permalink + "'></a>"; 
         trackUrlConcatStrings += trackUrlString;
+        console.log(marker);
+        trackMarkers.push(marker);
       });
       
       var template = '<div class="sc-player">' + trackUrlConcatStrings + '</div>';
