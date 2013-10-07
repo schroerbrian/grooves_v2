@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   "use strict";
   //calling map and setting view to a static location
-  var map = L.map('map', { center: [22, 122], maxBounds: [[90, -180], [-90, 180]] }).setView([10, 0.1], 1);
+  var map = L.map('map').setView([10, 0.1], 3); /*{maxBounds: [[90, -180], [-90, 180]] }). */ 
 
     L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
@@ -42,7 +42,7 @@ $(document).ready(function() {
         .on("click", function(event) {var trackId = lastTrack.track_id;
         onMarkerClick(trackId);
         })
-        .on("click", function() { map.setView(coords, 3);
+        .on("click", function() { map.setView(lastTrack.coordinates, 4);
         })
        // if i.zero? 
         // .openPopup();
@@ -99,7 +99,7 @@ $(document).ready(function() {
           .on("click", function(event) {var trackId = lastTrack.track_id;
           onMarkerClick(trackId);
           })
-          .on("click", function() { map.setView(coords, 3);
+          .on("click", function() { map.setView(lastTrack.coordinates, 4);
           });
          // if i.zero? 
           // .openPopup();

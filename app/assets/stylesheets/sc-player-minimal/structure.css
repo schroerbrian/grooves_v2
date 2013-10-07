@@ -167,7 +167,7 @@ ol.sc-trackslist li:last-child {
   position: absolute;
   top: -66%;
   width : 400px;
-  height: 30px;
+  height: 32px;
   z-index: 500;
   color: rgba(127,127,127, 0.8);
   border-top-right-radius: 5px;
