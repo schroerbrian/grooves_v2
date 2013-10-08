@@ -643,16 +643,29 @@
 
   // selecting tracks in the playlist
   $(document).on('click','.sc-trackslist li', function(event) {
+    var selectTrackMarkers = trackMarkers;
+    var selectTrackObjects = trackObjects;
     var $track = $(this),
         $player = $track.closest('.sc-player'),
         trackId = $track.data('sc-track').id,
         play = $player.is(':not(.playing)') || $track.is(':not(.active)');
     if (play) {
       onPlay($player, trackId);
+      $track.addClass('active').siblings('li').removeClass('active');
+      console.log($track, trackId, $player, play, $($track).parent(), $($track).parent().children());
+      var trackClasses = [];
+         children = $track.parent().children();
+      children.each(function(i,e) { 
+        var eClass = $(e).attr('class');
+          trackClasses.push(eClass)
+      });
+      var currentTrackIndex = jQuery.inArray('active', trackClasses);
+          trackCoordinates = selectTrackObjects[currentTrackIndex].coordinates;
+      mapObject.setView(trackCoordinates, 4);
+      selectTrackMarkers[currentTrackIndex].openPopup();
     }else{
       onPause($player);
     }
-    $track.addClass('active').siblings('li').removeClass('active');
     $('.artworks li', $player).each(function(index) {
       $(this).toggleClass('active', index === trackId);
     });
