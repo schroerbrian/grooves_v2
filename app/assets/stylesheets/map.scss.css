@@ -249,7 +249,18 @@ header .site_name h1 {
 	color: rgba(255,255,255,0.5);
 }
 
+/* LEAFLET STUFF */
+
 .leaflet-control-container .leaflet-right {
 	left: 0;
 	right: initial;
+}
+
+.leaflet-top .leaflet-bar a, .leaflet-bar a:hover {
+	background: none;
+	box-shadow: none;
+}
+
+.leaflet-top .leaflet-bar {
+	box-shadow: none;
 }
