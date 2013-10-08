@@ -149,11 +149,11 @@ header .site_name h1 {
 }
 
 .leaflet-popup-content a:link {
-	color: #000;
+	color: rgba(52,152,219,.8);
 }
 
 .leaflet-popup-content a:hover {
-	color: #4e4e4e;
+	color: rgba(52,152,219,.5);
 }
 
 .leaflet-popup-tip-container .leaflet-popup-tip {

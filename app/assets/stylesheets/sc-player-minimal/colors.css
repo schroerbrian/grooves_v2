@@ -17,7 +17,6 @@
 
 .sc-player a {
   text-decoration: none;
-  color: #333;
 }
 
 /* scrubber */
@@ -127,7 +126,7 @@
 }
 
 .sc-player ol.sc-trackslist li:hover {
-  background: rgba(52,152,219, 0.4); 
+  background: rgba(52,152,219, 0.4);
 }
 
 
