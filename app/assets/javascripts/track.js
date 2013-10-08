@@ -96,15 +96,16 @@ $(document).ready(function() {
           .addTo(map)
           .bindPopup("<div class='top'>" 
             + "<img src='" + lastTrack.user_avatar_url
-            + "'width='80'>" + "<p class='name'>" 
-            + lastTrack.username  
-            + "</p></div>"  
+            + "'width='40'>" + "<p class='name'>" 
+            + lastTrack.track_name  
+            + "</p>"  
             + "<a href='http://soundcloud.com/" + lastTrack.user_permalink + "/" + lastTrack.track_permalink 
             + "'target='_blank'>"
             + "<em>" 
-            + lastTrack.track_name 
+            + lastTrack.username 
             + "</em></a><br />" 
             + lastTrack.user_city + ", " + lastTrack.user_country) 
+            + "</div>"
           .on("click", function(event) {var trackId = lastTrack.track_id;
           onMarkerClick(trackId);
           })
