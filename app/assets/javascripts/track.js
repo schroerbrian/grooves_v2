@@ -33,13 +33,14 @@ $(document).ready(function() {
         .addTo(map)
         .bindPopup("<div class='top'>" 
           + "<img src='" + lastTrack.user_avatar_url
-          + "'width='60'> <div class='popup-text'> <span class='name'>" 
-          + lastTrack.track_name  
-          + "</span> <br>"  
-          + "<a href='http://soundcloud.com/" + lastTrack.user_permalink + "/" + lastTrack.track_permalink 
+          + "'width='60'> <div class='popup-text'>"  
+          + "<div class='title-wrapper'><a href='http://soundcloud.com/" 
+          + lastTrack.user_permalink + "/" + lastTrack.track_permalink 
           + "'target='_blank'>" 
-          + lastTrack.username 
-          + "</a><br><span>" 
+          + lastTrack.track_name 
+          + "</a></div><span class='name'>" 
+          + lastTrack.username  
+          + "</span><br><span>" 
           + lastTrack.user_city + ", " + lastTrack.user_country 
           + "</span></div></div>")
         .on("click", function(event) {var trackId = lastTrack.track_id;
@@ -95,17 +96,18 @@ $(document).ready(function() {
         var marker = 
         L.marker(lastTrack.coordinates)
           .addTo(map)
-          .bindPopup("<div class='top'>" 
-            + "<img src='" + lastTrack.user_avatar_url
-            + "'width='60'> <div class='popup-text'> <span class='name'>" 
-            + lastTrack.track_name  
-            + "</span>"  
-            + "<a href='http://soundcloud.com/" + lastTrack.user_permalink + "/" + lastTrack.track_permalink 
-            + "'target='_blank'>" 
-            + lastTrack.username 
-            + "</a><span>" 
-            + lastTrack.user_city + ", " + lastTrack.user_country 
-            + "</span></div></div>")
+            .bindPopup("<div class='top'>" 
+              + "<img src='" + lastTrack.user_avatar_url
+              + "'width='60'> <div class='popup-text'>"  
+              + "<div class='title-wrapper'><a href='http://soundcloud.com/" 
+              + lastTrack.user_permalink + "/" + lastTrack.track_permalink 
+              + "'target='_blank'>" 
+              + lastTrack.track_name 
+              + "</a></div><span class='name'>" 
+              + lastTrack.username  
+              + "</span><br><span>" 
+              + lastTrack.user_city + ", " + lastTrack.user_country 
+              + "</span></div></div>")
           .on("click", function(event) {var trackId = lastTrack.track_id;
           onMarkerClick(trackId);
           })

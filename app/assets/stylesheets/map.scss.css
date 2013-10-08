@@ -16,6 +16,7 @@ header {
 	width: 100%;
 	position: relative;
 	top: 10px;
+	margin-top: 5%;
 	border-top: 0;
 	background: rgba(236, 240, 241, 0.5);
 	padding-top: 8px;
@@ -34,6 +35,10 @@ header .site_name h1 {
 	margin-top: -3px;
 	font-size: 18px;
 	color: rgba(127,127,127,0.5);
+}
+
+.widget-container {
+	margin-top: 30%;
 }
 
 .new-tracks {
@@ -98,7 +103,6 @@ header .site_name h1 {
 }
 
 .leaflet-popup .leaflet-popup-content-wrapper {
-	width: 275px;
 	height: 120px;
 	background: rgba(255,255,255, 0.7);
 	-webkit-border-radius: 0;
@@ -108,11 +112,10 @@ header .site_name h1 {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	box-shadow: none;
-	overflow: hidden;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content {
-	width: 100%;
+	width: 360px !important;
 	height: 100%;
 	margin: 17px 3px;
 }
@@ -132,8 +135,14 @@ header .site_name h1 {
 	margin-left: 68px;
 }
 
+.title-wrapper {
+	width: 295px;
+	max-height: 3em;
+}
+
 .leaflet-popup-content a {
 	text-decoration: none;
+	font-size: 1.2em;
 	target-name: new;
 	target-new: tab;
 	font-family: "Helvetica", sans-serif;
@@ -147,6 +156,11 @@ header .site_name h1 {
 	color: #4e4e4e;
 }
 
+.leaflet-popup-tip-container .leaflet-popup-tip {
+	background: rgba(255,255,255,0.7);
+	box-shadow: none;
+}
+
 .footer {
 	height: 100%;
 	background: rgba(52,152,219, 0.7);
@@ -155,7 +169,7 @@ header .site_name h1 {
   bottom: 0;
   right: 0;
   width: 450px;
-  overflow-y: scroll;
+ 	overflow-y: scroll;
 }
 
 .track:not(:first-child) {
@@ -182,21 +196,60 @@ header .site_name h1 {
 	margin-right: 0px;
 } 
 
+.call-tracks {
+	margin-top: 42%;
+}
+
 .call-tracks .get-more-tracks {
 	display: inline-block;
 	position: relative;
-	left: 20px;
-	margin-top: 20px;
-	padding: 8px 5px;
-	border: 2px solid rgba(229,98,108, .8);
-	font-size: 12px;
+	left: 12px;
+	padding: 10px 8px;
+	border: solid 2px rgba(52,152,219,1);
+	font-size: .8em;
 	font-family: 'arial', sans-serif;
 	text-transform: uppercase;
 	font-weight: bold; 
-	color: rgba(229,98,108, .7);
+	color: rgba(255,255,255,.5);
 	cursor: default;
 }
 
 .get-more-tracks:hover {
 	border: 2px solid rgba(229,98,108, .5);	
+	color: rgba(255,255,255,.8);
+}
+
+.about {
+	margin: 20px 0 0 25px;
+	text-align: left;
+}
+
+.icon-question {
+	position: absolute;
+	bottom: 15px;
+	font-size: 1.5em;
+	color: rgba(255,255,255,.5);
+}
+
+.about-link {
+	text-decoration: none;
+	cursor: default;
+	display: inline-block;
+}
+
+.icon-question:hover {
+	color: rgba(255,255,255,.9);
+}
+
+.powered-by {
+	position: absolute;
+	right: 10px;
+	bottom: 20px;
+	font-size: .6em;
+	color: rgba(255,255,255,0.5);
+}
+
+.leaflet-control-container .leaflet-right {
+	left: 0;
+	right: initial;
 }
