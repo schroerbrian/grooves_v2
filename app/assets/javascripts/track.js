@@ -20,10 +20,11 @@ $(document).ready(function() {
           + "<div class='title-wrapper'><a href='http://www.brianschroer.co'" 
           + "target='_blank'>" 
           + "Brian Schroer"
-          + "</a><br><span class='brian-location'>" 
-          + "San Francisco, CA" 
-          + "</span></div><span class='blurb'>Brian is full-stack web developer with" 
-          + " a particular interest in UX and front-end development</span></div></div>")
+          + "</a> </span></div> <span class='blurb'>Brian is full-stack web developer with" 
+          + " a particular interest in UX and front-end development. He was inspired to build" 
+          + " Grooves to help people discover eclectic music in a different way. Check out" 
+          + " more of his work <a href='http://www.brianschroer.co' target='_blank' class='brian-link'>"
+          + " here.</a></span></div> </div>" )
         .on("click", function() { map.setView(aboutCoords, 4);
         });
 

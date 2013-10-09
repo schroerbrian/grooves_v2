@@ -268,11 +268,15 @@ header .site_name h1 {
 
 .blurb {
 	color: rgba(229,98,108, .5);
-	line-height: 19px;
+	line-height: 15px;
 }
 
 .brian-location {
 	color: rgba(52,152,219, 0.8);
+}
+
+.blurb .brian-link {
+	font-size: 12px;
 }
 
 /* LEAFLET STUFF */
