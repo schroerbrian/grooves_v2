@@ -10,6 +10,23 @@ $(document).ready(function() {
         minZoom: 1   
     }).addTo(map);
 
+    var aboutMarker = 
+      L.marker([37.769581, -122.423243])
+        .addTo(map)
+        .bindPopup("<div class='top about-marker'>" 
+          + "<img src='assets/brian1.png'" 
+          + "width='60'> <div class='popup-text'>"  
+          + "<div class='title-wrapper'><a href='http://www.brianschroer.co'" 
+          + "target='_blank'>" 
+          + "Brian Schroer"
+          + "</a></div><a href='http://www.brianschroer.co' target='_blank' class='portfolio'>" 
+          + "www.brianschroer.co </a> <br> <span class='location'>" 
+          + "San Francisco, CA" 
+          + "</span></div></div>")
+        .on("click", function() { map.setView([37.769581, -122.423243], 4);
+        });
+
+  console.log(aboutMarker);
   mapObject = map;
   //TRACKS STUFF
   _.templateSettings = {
@@ -40,7 +57,7 @@ $(document).ready(function() {
           + lastTrack.track_name 
           + "</a></div><span class='name'>" 
           + lastTrack.username  
-          + "</span><br><span>" 
+          + "</span><br><span class='location'>" 
           + lastTrack.user_city + ", " + lastTrack.user_country 
           + "</span></div></div>")
         .on("click", function(event) {var trackId = lastTrack.track_id;
@@ -105,7 +122,7 @@ $(document).ready(function() {
               + lastTrack.track_name 
               + "</a></div><span class='name'>" 
               + lastTrack.username  
-              + "</span><br><span>" 
+              + "</span><br><span class='location'>" 
               + lastTrack.user_city + ", " + lastTrack.user_country 
               + "</span></div></div>")
           .on("click", function(event) {var trackId = lastTrack.track_id;
@@ -135,6 +152,11 @@ $(document).ready(function() {
     });
   });
   
+  // Pull up about-me bubble
+  var about = $('.about-link');
+    about.on('click', function(){
+      ("hi");
+    })
   //pulls up popup window on clicked marker and closes other popup windows. intended to switch song also.
   function onMarkerClick(trackId) {
     $(".track").hide();

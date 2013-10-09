@@ -127,6 +127,7 @@
 
 .sc-player ol.sc-trackslist li:hover {
   background: rgba(52,152,219, 0.4);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 
