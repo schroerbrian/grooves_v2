@@ -261,9 +261,18 @@ header .site_name h1 {
 /* My Marker */
 
 .leaflet-popup-content a.portfolio:link {
-	color: rgba(229,98,108, .7);
+	color: rgba(52,152,219, 0.7);
 	line-height: 19px;
 	font-size: 12px;
+}
+
+.blurb {
+	color: rgba(229,98,108, .5);
+	line-height: 19px;
+}
+
+.brian-location {
+	color: rgba(52,152,219, 0.8);
 }
 
 /* LEAFLET STUFF */

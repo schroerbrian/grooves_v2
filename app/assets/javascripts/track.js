@@ -10,6 +10,7 @@ $(document).ready(function() {
         minZoom: 1   
     }).addTo(map);
 
+    var aboutCoords = [37.769581, -122.423243];
     var aboutMarker = 
       L.marker([37.769581, -122.423243])
         .addTo(map)
@@ -19,14 +20,13 @@ $(document).ready(function() {
           + "<div class='title-wrapper'><a href='http://www.brianschroer.co'" 
           + "target='_blank'>" 
           + "Brian Schroer"
-          + "</a></div><a href='http://www.brianschroer.co' target='_blank' class='portfolio'>" 
-          + "www.brianschroer.co </a> <br> <span class='location'>" 
+          + "</a><br><span class='brian-location'>" 
           + "San Francisco, CA" 
-          + "</span></div></div>")
-        .on("click", function() { map.setView([37.769581, -122.423243], 4);
+          + "</span></div><span class='blurb'>Brian is full-stack web developer with" 
+          + " a particular interest in UX and front-end development</span></div></div>")
+        .on("click", function() { map.setView(aboutCoords, 4);
         });
 
-  console.log(aboutMarker);
   mapObject = map;
   //TRACKS STUFF
   _.templateSettings = {
@@ -155,7 +155,8 @@ $(document).ready(function() {
   // Pull up about-me bubble
   var about = $('.about-link');
     about.on('click', function(){
-      ("hi");
+      aboutMarker.openPopup();
+      map.setView(aboutCoords, 4);
     })
   //pulls up popup window on clicked marker and closes other popup windows. intended to switch song also.
   function onMarkerClick(trackId) {
